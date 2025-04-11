@@ -30,14 +30,16 @@ const ScrollPage = () => {
     gsap.to(boxes, {
       xPercent: -100 * (boxes.length - 1),
       ease: "none",
+      // ease: 'power1.in',
+      // duration: 1,  
       scrollTrigger: {
         trigger: containerRef.current,
         pin: true,
-        scrub: 1,
+        scrub: 3,
         snap: {
           snapTo: 1 / (boxes.length - 1),
           inertia: false,
-          duration: 0.3
+          // duration: 1
         },
         start: "top top",
         end: () => `+=${containerRef.current.offsetWidth * (boxes.length - 1)}`,
