@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { animatePageOut } from "@/pages/animation";
+import { animatePageOut } from "@/components/animation";
 import Link from "next/link";
 
 export default function TransitionLink({ href, label }) {
