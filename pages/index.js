@@ -34,7 +34,13 @@ const ScrollPage = () => {
         trigger: containerRef.current,
         pin: true,
         scrub: 1,
-        end: () => `+=${containerRef.current.offsetWidth}`,
+        snap: {
+          snapTo: 1 / (boxes.length - 1),
+          inertia: false,
+          duration: 0.3
+        },
+        start: "top top",
+        end: () => `+=${containerRef.current.offsetWidth * (boxes.length - 1)}`,
         invalidateOnRefresh: true,
       },
     });
